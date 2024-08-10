@@ -16,7 +16,7 @@ class  CreatorPageState extends State <CreatorPage> {
         backgroundColor:Colors.indigo,
         centerTitle: true,
       ),
-     drawer:const NavDrawer(),
+     drawer:const NavDrawer(selected: DrawerSelection.creator,),
      body: const  Center(child:Text('ABOUT'),),
     );
   }

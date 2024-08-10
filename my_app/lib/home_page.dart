@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         backgroundColor:Colors.indigo,
         centerTitle: true,
       ),
-     drawer:const NavDrawer(),
+     drawer:const NavDrawer(selected:DrawerSelection.home ,),
     );
   }
   }

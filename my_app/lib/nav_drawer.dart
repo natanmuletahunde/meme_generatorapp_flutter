@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:my_app/Creator_page.dart';
 import 'package:my_app/about_page.dart';
 import 'package:my_app/home_page.dart';
+enum DrawerSelection {home,creator, about} 
 class NavDrawer extends StatefulWidget {
-  const NavDrawer({super.key});
+  final DrawerSelection selected;
+  const NavDrawer({Key? key, required this.selected}) : super(key: key);
 
   @override
   State<NavDrawer> createState() => _NavDrawerState();
@@ -27,6 +29,8 @@ class _NavDrawerState extends State<NavDrawer> {
                 )),
               ),
               ListTile(
+                selected: widget.selected == DrawerSelection.home,
+                selectedColor: Colors.indigo,
                 leading: const Icon(Icons.home),
               title:const Text('Meme of the Day'),
               onTap: () {
@@ -34,7 +38,8 @@ class _NavDrawerState extends State<NavDrawer> {
               },
               ),
               ListTile(
-                leading: const Icon(Icons.whatshot),
+              selected: widget.selected == DrawerSelection.creator,
+              leading: const Icon(Icons.whatshot),
               title:const Text('Meme creator'),
               onTap: () {
               Navigator.pushReplacement(context , MaterialPageRoute(builder: (context) => const CreatorPage()),);
@@ -42,6 +47,7 @@ class _NavDrawerState extends State<NavDrawer> {
               },
               ),
               ListTile(
+                selected: widget.selected == DrawerSelection.about,
                 leading: const Icon(Icons.info),
               title:const Text('About'),
               onTap: () {

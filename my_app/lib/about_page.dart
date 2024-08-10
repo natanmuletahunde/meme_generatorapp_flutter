@@ -11,7 +11,7 @@ class AboutPage extends StatelessWidget {
         backgroundColor:Colors.indigo,
         centerTitle: true,
       ),
-     drawer:const NavDrawer(),
+     drawer:const NavDrawer(selected: DrawerSelection.about,),
      body: const  Center(child:Text('ABOUT'),),  
     );
   }
