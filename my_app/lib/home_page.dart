@@ -8,11 +8,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Meme of the Day'),
+        title: const Text('Meme of the Day',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         backgroundColor:Colors.indigo,
         centerTitle: true,
       ),
-      drawer:const NavDrawer(),
+     drawer:const NavDrawer(),
     );
   }
-}
+  }
