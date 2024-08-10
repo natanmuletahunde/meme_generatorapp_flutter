@@ -5,7 +5,7 @@ import 'package:my_app/home_page.dart';
 enum DrawerSelection {home,creator, about} 
 class NavDrawer extends StatefulWidget {
   final DrawerSelection selected;
-  const NavDrawer({Key? key, required this.selected}) : super(key: key);
+  const NavDrawer({super.key, required this.selected});
 
   @override
   State<NavDrawer> createState() => _NavDrawerState();
@@ -31,6 +31,7 @@ class _NavDrawerState extends State<NavDrawer> {
               ListTile(
                 selected: widget.selected == DrawerSelection.home,
                 selectedColor: Colors.indigo,
+            selectedTileColor: const Color.fromARGB(255, 169, 179, 234),
                 leading: const Icon(Icons.home),
               title:const Text('Meme of the Day'),
               onTap: () {
@@ -39,6 +40,8 @@ class _NavDrawerState extends State<NavDrawer> {
               ),
               ListTile(
               selected: widget.selected == DrawerSelection.creator,
+               selectedColor: Colors.indigo,
+                selectedTileColor: Color.fromARGB(255, 169, 179, 234),
               leading: const Icon(Icons.whatshot),
               title:const Text('Meme creator'),
               onTap: () {
@@ -48,6 +51,9 @@ class _NavDrawerState extends State<NavDrawer> {
               ),
               ListTile(
                 selected: widget.selected == DrawerSelection.about,
+                selectedColor: Colors.indigo,
+               selectedTileColor: Color.fromARGB(255, 169, 179, 234),
+
                 leading: const Icon(Icons.info),
               title:const Text('About'),
               onTap: () {

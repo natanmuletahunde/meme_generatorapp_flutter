@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/nav_drawer.dart';
 
@@ -12,7 +13,10 @@ class HomePage extends StatelessWidget {
         backgroundColor:Colors.indigo,
         centerTitle: true,
       ),
-     drawer:const NavDrawer(selected:DrawerSelection.home ,),
+     drawer:const NavDrawer(selected:DrawerSelection.home),
+     body: Swiper(scale: 0.8, pagination: const SwiperPagination(), itemCount: 4,itemBuilder: (context, index) {
+      return  const  Center(child: Text('Swipppeee'),);
+     } ),  
     );
   }
   }
